@@ -1,0 +1,24 @@
+{% block element_maps_cookie %}
+    {% set config = element.fieldConfig.elements %}
+    <div class="cms-element-{{ element.type }} h-100">
+        <div class="maps-cookie-maps" id="maps-{{ element.id }}">
+            <div class="template d-none">{{ config.source.value }}</div>
+        </div>
+        <div class="maps-cookie-no-maps position-relative">
+            {% if config.previewMedia.value or config("MapsCookie.config.previewImage") %}
+                {% if config.previewMedia.value %}
+                    {% set previewId = config.previewMedia.value %}
+                {% elseif config("MapsCookie.config.previewImage") %}
+                    {% set previewId = config("MapsCookie.config.previewImage") %}
+                {% endif %}
+                {% set mediaCollection = searchMedia([previewId], context.context) %}
+                {% set preview = mediaCollection.get(previewId) %}
+                <img class="w-100 h-100" alt="Maps Preview Image" src="{{ preview.url }}">
+            {% endif %}
+            <div class="maps-overlay">
+                <button class="btn btn-light"
+                        data-map-load>{{ "maps.cookie.allowMaps" }}</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

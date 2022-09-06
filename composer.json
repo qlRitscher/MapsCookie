@@ -1,0 +1,18 @@
+{
+  "name": "skouz/maps-cookie",
+  "description": "Maps in Cookie Consent",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "MapsCookie\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "MapsCookie\\MapsCookie",
+    "label": {
+      "de-DE": "Maps in Cookie Consent",
+      "en-GB": "Maps in Cookie Consent"
+    }
+  }
+}

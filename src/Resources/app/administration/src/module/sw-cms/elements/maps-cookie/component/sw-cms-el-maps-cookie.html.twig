@@ -1,0 +1,7 @@
+{% block sw_cms_element_maps_cookie_preview %}
+    {% if element.config.source.value %}
+    {{ element.config.source.value }}
+    {% else %}
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10772.020497905123!2d9.684233!3d47.548229!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x51c785f09bc450d2!2sSKOUZ!5e0!3m2!1sde!2sde!4v1662383147504!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    {% endif %}
+{% endblock %}
